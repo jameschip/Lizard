@@ -16,10 +16,12 @@
 #define TYPE_BQ     12
 #define TYPE_BR     13
 #define TYPE_CB     14
+#define TYPE_UL     15
 
 #define LINK    "li"
 #define BOLD    "bo"
 #define ITAL    "it"
+#define ULIN    "ul"
 #define IMAG    "im"
 #define POIN    "bp"
 #define BLOC    "bq"
@@ -183,6 +185,8 @@ void findTagType(std::string &input, tag_t * t) {
         t->data = input.substr(data_start, (it - input.begin()) - data_start);
     } else if (iden.compare(ITAL) == 0) {
         t->type = TYPE_IT;
+    } else if(iden.compare(ULIN) == 0) {
+        t->type = TYPE_UL;
     } else if (iden.compare(BOLD) == 0) {
         t->type = TYPE_BO;
     } else if (iden.compare(POIN) == 0) {
@@ -225,6 +229,8 @@ std::string getReplacementString(tag_t t) {
             return "<b>" + t.text + "</b>";
         case TYPE_IT:
             return "<i>" + t.text + "</i>";
+        case TYPE_UL:
+            return "<u>" + t.text + "</u>";
         case TYPE_H1:
             return "<h1>" + t.text + "</h1>";
         case TYPE_H2:
