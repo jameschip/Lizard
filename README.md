@@ -38,3 +38,10 @@ this is text before the list.
 `{{ bp next list item }}`  
 `{{ bp next list item}}`  
 this is tex after the list.  
+
+### Skipping tags.
+
+It is possible to escape Lizard tags so that you can have them displayed in the content.
+
+```\{{ bo this tag will be skipped and be displayed in the content with the leading \ removed }}```
+

@@ -44,6 +44,7 @@ struct tag_t
     int end = NO_POS;
     std::string data;
     std::string text;
+    bool skip = false;
 };
 
 tag_t findTag(int offset, std::string * input);
@@ -66,7 +67,8 @@ std::string parse(std::string &source) {
         t = findTag(search_location, &out);
         
 
-        if (t.type != TYPE_NONE) {
+
+        if (t.type != TYPE_NONE ) {
             
             if (!in_list && t.type == TYPE_BP) {
                 in_list = true;
@@ -85,10 +87,16 @@ std::string parse(std::string &source) {
                 list_end = t.end + 2;
             }
 
-            search_location = t.start;
-            replaccement = getReplacementString(t);
-            out.resize(out.length() + replaccement.length() - (t.end - t.start));
-            out.replace(t.start, (t.end - t.start) + 1, replaccement);
+
+            if (t.skip != true ) {
+                search_location = t.start;
+                replaccement = getReplacementString(t);
+                out.resize(out.length() + replaccement.length() - (t.end - t.start));
+                out.replace(t.start, (t.end - t.start) + 1, replaccement);
+            } else {
+                search_location = t.end - 1;
+                out.erase(t.start - 1, 1);
+            }
 
             
         }
@@ -133,6 +141,9 @@ void findTagStart(std::string &input, std::string::iterator it, tag_t *t) {
     for (; it != input.end(); ++it ) {
         if ( *it == OPEN_B && *(it + 1) == OPEN_B) {
             t->start = it - input.begin();
+            if ( *( it - 1 ) == '\\' ) {
+                t->skip = true;
+            }
             it++;
             return;
         }
