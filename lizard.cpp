@@ -72,7 +72,7 @@ std::string parse(std::string &source) {
 
         if (t.type != TYPE_NONE ) {
             
-            if (!in_list && t.type == TYPE_BP) {
+            if (!in_list && t.type == TYPE_BP && t.skip != true) {
                 in_list = true;
                 out.resize(out.length() + 4);
                 out.insert(t.start, "<ul>");
