@@ -80,7 +80,7 @@ std::string parse(std::string &source) {
             } else if (in_list && t.type != TYPE_BP) {
                 in_list = false;
                 out.resize(out.length() + 5);
-                out.insert(list_end, "<\\ul>");
+                out.insert(list_end, "</ul>");
                 t.start += 5;
                 t.end += 5;
             } else if (in_list && t.type == TYPE_BP) {
@@ -99,7 +99,7 @@ std::string parse(std::string &source) {
     if (in_list) {
         in_list = false;
         out.resize(out.length() + 5);
-        out.insert(list_end, "<\\ul>");
+        out.insert(list_end, "</ul>");
         t.start += 5;
         t.end += 5;
     }
