@@ -1,0 +1,14 @@
+this is {{ bo bold text }} 
+this is {{ it italic text }} 
+this is {{ ul underlined text }} 
+this is {{ li http://jameschip.io a link }} 
+this is an {{ im image.jpg }}
+this is a new line {{ br }}
+{{ cb 
+this is a 
+code block }}
+{{ bp point 1 }}
+{{ bp point 2 }}
+{{ bp point 3 }}
+~{{ a skipped tag }}~
+{{ gg not a tag }}

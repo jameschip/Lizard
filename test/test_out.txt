@@ -1,0 +1,13 @@
+this is <b>bold text </b> 
+this is <i>italic text </i> 
+this is <u>underlined text </u> 
+this is <a href="http://jameschip.io">a link </a> 
+this is an <img src="image.jpg"></img>
+this is a new line <br>
+<pre><code>this is a 
+code block </code></pre>
+<ul><li>point 1 </li>
+<li>point 2 </li>
+<li>point 3 </li></ul>
+{{ a skipped tag }}
+{{ gg not a tag }}
