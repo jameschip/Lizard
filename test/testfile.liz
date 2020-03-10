@@ -3,7 +3,7 @@ this is {{ it italic text }}
 this is {{ ul underlined text }} 
 this is {{ li http://jameschip.io a link }} 
 this is an {{ im image.jpg }}
-this is a new line {{ br }}
+this is a new line {{br}}
 {{ cb 
 this is a 
 code block }}
@@ -12,3 +12,10 @@ code block }}
 {{ bp point 3 }}
 ~{{ a skipped tag }}~
 {{ gg not a tag }}
+{{ h1 header 1 }}
+{{ h1 header 2 }}
+{{ h2 header 3 }}
+{{ h3 header 4 }}
+{{ h4 header 5 }}
+{{ h5 header 6 }}
+{{ h6 header 7 }}

@@ -11,3 +11,10 @@ code block </code></pre>
 <li>point 3 </li></ul>
 {{ a skipped tag }}
 {{ gg not a tag }}
+<h1>header 1 </h1>
+<h1>header 2 </h1>
+<h2>header 3 </h2>
+<h3>header 4 </h3>
+<h4>header 5 </h4>
+<h5>header 6 </h5>
+<h6>header 7 </h6>

@@ -88,9 +88,11 @@ std::string parse(std::string &source) {
             search_location = t.start;
             out.replace(t.start, (t.end - t.start) + 1 , getReplacementString(t));
             
+        } else {
+            search_location = t.end ;
         }
 
-    } while(t.type != TYPE_NONE);
+    } while(t.end  < out.length() );
 
     if (in_list) {
         in_list = false;
